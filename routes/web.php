@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('templates.index');
 });
 
+Route::get('/publikasi', function () {
+    return view('templates.publikasi');
+});
+
 Route::get('intro_content', function () {
 
     $intros = DB::table('intros')->get();

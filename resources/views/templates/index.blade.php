@@ -9,158 +9,11 @@
     <title>BFI Tech</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            padding-top: 54px;
-        }
-
-        .nav-link {
-            color: black;
-            font-size: 14pt;
-        }
-
-        .nav-link:hover {
-            color: #182B6D;
-            border-bottom: dotted 2px #182B6D;
-        }
-
-        .intro {
-            background-image: url("/img/background_intro.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            min-height: 600px;
-        }
-
-        .intro-content {
-            align-items: center;
-            align-content: center;
-            margin-left: 35%;
-            margin-top: 15%;
-            position: absolute;
-            max-width: 550px;
-            padding: 30px;
-            background-color: #F2F2F2;
-            border-radius: 10px;
-        }
-
-        .btn-danger {
-            margin-left: 30%;
-            margin-top: 5%;
-            background-color: #F20C0C;
-        }
-
-        .produk {
-            background-color: #182B6D;
-            color: white;
-            padding: 70px 100px;
-        }
-
-        .produk-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
-        }
-
-        .produk-content {
-            width: 450px;
-            background-color: white;
-            color: black;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .flex-container {
-            display: flex;
-            margin-bottom: 2%;
-        }
-
-        .flex-child {
-            flex: 1;
-        }
-
-
-        .flex-child-2 {
-            flex: 1;
-        }
-
-        .flex-child:first-child {
-            margin-right: 20px;
-        }
-
-        .tentang {
-            padding: 70px 100px;
-        }
-
-        .domain-kerja {
-            width: 300px;
-            background-color: #f2f2f2;
-            color: black;
-            padding: 30px;
-            margin: 2% 2% 2% 0;
-        }
-
-        .kontak {
-            background-color: #182B6D;
-            color: white;
-            padding: 70px 100px;
-            text-align: center;
-        }
-
-        #foot1,
-        #foot2 {
-            display: inline-block;
-            margin-top: 3%;
-        }
-
-        #foot1 {
-            margin-left: 7%;
-        }
-
-        #foot2 {
-            text-align: right;
-            margin-left: 45%;
-        }
-
-        @media (min-width: 992px) {
-            body {
-                padding-top: 56px;
-            }
-        }
-
-    </style>
+    <link rel="icon" href="/img/Logo_BFITech.png" type="image/x-icon">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<header>
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: white">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img src="/img/Logo_BFITech.png" alt="logo" style="height: 95px"></a>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#produk">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Publikasi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tentang">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+@include('templates.partials.header')
 
 <body>
     <div id="app">
@@ -347,24 +200,7 @@
     </div>
 
     </div>
-    <footer class="py-5">
-        <div class="container-footer">
-            <p style="color: #182B6D; margin-left: 8%;">
-                <strong> PT Bentara Fraktal Indonesia Teknologi</strong>
-                <br><br>
-                Jl. Sarimadu Permai Blok 24 No. 175 Bandung 40164
-                <br><br>
-                Telp: 022-82000390
-                <br><br>
-                Email: kontak@bfitech.co.id
-                <br><br>
-            </p>
-            <hr style="border-top: 2px solid #182B6D; width: 85%">
-            <a class="navbar-brand text-left" id="foot1"><img src="/img/Logo_BFITech.png" alt="logo"
-                    style="height: 95px"></a>
-            <p class="text-right" id="foot2" style="color: #182B6D;">Copyright &copy; 2021 BFI Technologies. All Rights Reserved.</p>
-        </div>
-    </footer>
+    @include('templates.partials.footer')
     <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
