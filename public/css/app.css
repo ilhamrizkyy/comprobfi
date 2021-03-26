@@ -113,6 +113,29 @@ body {
   margin-left: 45%;
 }
 
+.publikasi {
+  background-color: white;
+  padding: 100px;
+}
+
+
+.publikasi-content {
+  width: 450px;
+  color: black;
+  text-align: left;
+  padding: 20px;
+}
+
+.image-left{
+  float: left;
+  object-fit: cover;
+}
+
+.title-publikasi{
+  color: #182B6D;
+  cursor: pointer;
+}
+
 @media (min-width: 992px) {
   body {
       padding-top: 56px;
