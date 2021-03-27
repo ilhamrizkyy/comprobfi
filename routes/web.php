@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 /*
@@ -14,20 +15,12 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('templates.index');
+    return view('templates.index', [ContactController::class, 'contact']);
 });
 
 Route::get('/publikasi', function () {
     return view('templates.publikasi');
 });
-
-Route::get('intro_content', function () {
-
-    $intros = DB::table('intros')->get();
-
-    return view('intro_content', ['intros' => $intros]);
-});
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

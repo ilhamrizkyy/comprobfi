@@ -185,16 +185,21 @@
             </div>
             <div class="kontak" id="kontak">
                 <h2>Hubungi Kami</h2>
+                <div class="container">
+                    <form action="/action_page.php">
+                        <label for="fname">Nama</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Nama Anda..">
 
-                <form action="kontak@bfitech.co.id" method="post" enctype="text/plain">
-                    Name:<br>
-                    <input type="text" name="name"><br>
-                    E-mail:<br>
-                    <input type="text" name="mail"><br>
-                    Comment:<br>
-                    <input type="text" name="comment" size="50"><br><br>
-                    <input type="submit" value="Submit">
-                </form>
+                        <label for="email">Email </label>
+                        <input type="email" id="lname" name="lastname" placeholder="Email Anda..">
+
+                        <label for="subject">Pesan</label>
+                        <textarea id="subject" name="subject" placeholder="Pesan.."
+                            style="height:200px"></textarea>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
