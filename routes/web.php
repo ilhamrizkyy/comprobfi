@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('templates.index', [ContactController::class, 'contact']);
 });
 
+Route::post('/send-messages', [ContactController::class, 'sendEmail'])->name('contact.send');
+
 Route::get('/publikasi', function () {
     return view('templates.publikasi');
 });

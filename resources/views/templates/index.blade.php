@@ -184,17 +184,24 @@
                 </div>
             </div>
             <div class="kontak" id="kontak">
+                @csrf
+                @if (Session::has('message_sent'))
+                    <div class="alert alert-success" role="alert">
+                        {{Session::get('message_sent')}}
+                    </div>
+                @endif
                 <h2>Hubungi Kami</h2>
                 <div class="container">
-                    <form action="/action_page.php">
+                <form method="POST" action="{{route('contact.send')}}" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                         <label for="fname">Nama</label>
-                        <input type="text" id="fname" name="firstname" placeholder="Nama Anda..">
+                        <input type="text" id="fname" name="name" placeholder="Nama Anda..">
 
                         <label for="email">Email </label>
-                        <input type="email" id="lname" name="lastname" placeholder="Email Anda..">
+                        <input type="email" id="lname" name="email" placeholder="Email Anda..">
 
                         <label for="subject">Pesan</label>
-                        <textarea id="subject" name="subject" placeholder="Pesan.."
+                        <textarea id="subject" name="message" placeholder="Pesan.."
                             style="height:200px"></textarea>
 
                         <input type="submit" value="Submit">
